@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | María Rivas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Bahiana&family=Boldonse&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Englebert&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inconsolata:wght@200..900&family=League+Gothic&family=Mea+Culpa&family=Momo+Signature&family=Momo+Trust+Display&family=Outfit:wght@100..900&family=Rubik+Spray+Paint&family=Syne+Mono&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="folder-page">
+
+  <header id="navbar" class="solid">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">General</a></li>
+        <li><a href="knowme.html">Formación profesional</a></li>
+        <li><a href="trabajos.html">Trabajos</a></li>
+    
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact-main-container">
+    <div class="archive-header">
+      <h1 class="dual-section-title centered-title" id="typing-title">CONTACTO</h1>
+      <br>
+      <br>
+      <p class="contact-sub-info">¿Tienes un proyecto en mente? ¡Hagámoslo realidad!</p>
+    </div>
+
+    <div class="contact-form-wrapper">
+      <form action="#" method="POST" class="custom-booking-form">
+        
+        <div class="input-block-new">
+          <label class="label-custom">Nombre completo</label>
+          <input type="text" class="input-field-custom" placeholder="Escribe tu nombre..." required>
+        </div>
+
+        <div class="input-block-new">
+          <label class="label-custom">Correo electrónico</label>
+          <input type="email" class="input-field-custom" placeholder="tu@email.com" required>
+        </div>
+
+        <div class="input-block-new">
+          <label class="label-custom">¿Qué servicio necesitas?</label>
+          <select class="select-field-custom" required>
+            <option value="" disabled selected>Selecciona una categoría</option>
+            <option value="social">Social media</option>
+            <option value="branding">Branding & logo</option>
+            <option value="motion">Motion graphics</option>
+            <option value="video">Edición de video</option>
+            <option value="uiux">Diseño editorial</option>
+          </select>
+        </div>
+
+        <div class="input-block-new">
+          <label class="label-custom">Cuéntame sobre tu idea</label>
+          <textarea class="textarea-field-custom" rows="5" placeholder="Háblame de tu proyecto, objetivos, etc..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-button-fancy">
+          ENVIAR SOLICITUD
+          <span class="btn-hover-effect"></span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

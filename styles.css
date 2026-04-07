@@ -1,0 +1,2659 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Barra de navegación */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+#navbar.transparent {
+  background-color: transparent;
+}
+
+#navbar.solid {
+  background-color: #f0f0f0; /* Cambia este color según tu estilo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem;
+}
+
+.nav-links li {
+  margin: 0 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0077cc;
+}
+.hero {
+  background-color: #F8EDAD; /* Amarillo vibrante */
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Texto de fondo */
+.bg-text {
+  position: absolute;
+  font-size: 300px;
+  font-weight: bold;
+ font-family: "BBH Hegarty", sans-serif;
+  color: #7280ED;
+  opacity: 100; /* efecto de fondo, puedes ajustar */
+  line-height: 1;
+  pointer-events: none; /* no interfiere con clics */
+}
+
+.bg-text.maria {
+  top: 20px; /* margen para no chocar con la barra */
+  left: 30px;
+}
+
+.bg-text.rivas {
+  bottom: 40px; /* margen para respetar la siguiente sección */
+  right: 30px;
+}
+
+/* Posiciones específicas de las imágenes */
+.circle {
+  position: absolute;
+  bottom: 120px;   /* justo debajo de la M */
+  left: 60px;
+  width: 300px;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.hat {
+  position: absolute;
+  bottom: 70px;   /* parte inferior izquierda de la R */
+  right: 180px;
+  width: 300px;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.pencil {
+  position: absolute;
+  top: 20px;       /* cerca de la barra de navegación */
+  left: 10%;
+  transform: translateX(-50%) translateY(-50px);
+  width: 200px;
+  opacity: 0;
+}
+
+.smile {
+  position: absolute;
+  top: 200px;      /* al lado de la A */
+  right: 10px;
+  width: 300px;
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+/* Animación slide-in */
+.decorations img.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: transform 1s ease, opacity 1s ease;
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+  gap: 60px;
+  background-color: #F8EDAD;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease,transorm 1.2s ease;
+
+}
+
+.about.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Flip card */
+.flip-card {
+  background-color: transparent;
+  width: 522px;
+  height: 570px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  box-shadow: #1e1e1e33 0px 10px 20px;
+  
+}
+
+.flip-card-front img,
+.flip-card-back img {
+  width: 378px;
+  height: 504px;
+  object-fit: cover;
+}
+
+/* Cara trasera */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Contenido al lado del flip card */
+.about-content {
+  max-width: 500px;
+}
+
+.about-content h1 {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #1e1e1e;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.btn-knowme {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+  background-color: #ED7C30;
+  color: #F8EDAD;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.btn-knowme:hover {
+  background-color: #BD530B;
+  text-decoration: none;
+}
+
+.texto{font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+text-align: justify;
+}
+.programs {
+  padding: 80px 40px;
+  text-align: center;
+  background-color:#F8EDAD ;
+  position: relative;
+}
+
+.programs-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #1e1e1e;
+}
+
+.programs-header h2 {
+  font-size: 1.5rem;
+  color: #555;
+  margin-bottom: 60px;
+}
+
+.programs-content {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+/* Lado izquierdo */
+.programs-left .row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+@keyframes blurIn {
+  0% {
+    filter: blur(20px);
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.program-card {
+  text-align: center;
+}
+
+.program-card img {
+  width: 204px;
+  height: 204px;
+  object-fit: contain;
+  animation: blurIn 1.2s ease forwards;
+}
+
+.program-card p {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Lado derecho */
+.programs-right {
+  display: flex;
+  gap: 40px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mini-card {
+  text-align: center;
+}
+
+.mini-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  animation: blurIn 1.2s ease forwards;
+}
+
+.mini-card p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+/* Estilo inicial del título */
+#typing-title {
+  font-size: 3rem;
+  color: #7280ED;
+  border-right: 3px solid #1e1e1e; /* cursor */
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: boldonse, system-ui;
+}
+/* ===============================
+   GLASS ICONOCLASIA – ICONS
+   =============================== */
+
+/* Base glass style */
+.program-card img,
+.mini-card img {
+  position: relative;
+  padding: 20px;
+
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Floating animation */
+@keyframes glassFloat {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Light reflection (shine) */
+.program-card img::after,
+.mini-card img::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 70%
+  );
+
+  transform: translateX(-120%) rotate(25deg);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+/* Hover interaction */
+.program-card img:hover,
+.mini-card img:hover {
+  animation: glassFloat 1.8s ease-in-out infinite;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.18),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Shine animation on hover */
+.program-card img:hover::after,
+.mini-card img:hover::after {
+  transform: translateX(120%) rotate(25deg);
+}
+/* ===============================
+   SLIDE-OUT CODES CARD
+   =============================== */
+
+.codes-card {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  height: 70%;
+  max-height: 520px;
+
+  transform: translate(-85%, -50%);
+  z-index: 30;
+
+  display: flex;
+  align-items: stretch;
+
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* Reveal on hover */
+.codes-card:hover {
+  transform: translate(0, -50%);
+}
+
+/* Handle (visible part) */
+.codes-handle {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+
+  padding: 22px 14px;
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 1px;
+
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Main card */
+.codes-content {
+  width: 420px;
+  padding: 40px 36px;
+
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 0 32px 32px 0;
+
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.45);
+
+  font-family: "DM Sans", sans-serif;
+}
+
+
+.codes-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 22px;
+}
+
+.codes-content li {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.codes-content h4 {
+  font-size: 1.2rem;
+  margin-top: 24px;
+}
+
+.codes-content p {
+  font-size: 1rem;
+}
+
+.subtitulos{font-family: boldonse, system-ui;
+  color:#0077cc;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.texto2{font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+text-align: center;
+}
+ .card-swap-container {
+  height: 600vh; /* crea espacio para scroll */
+  position: relative;
+}
+
+.card-swap {
+  position: sticky;
+  top: 20vh;
+  width: 70%;
+  height: 60vh;
+  margin: auto;
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(15px);
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.card-swap img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-top: 16px;
+}
+.stack-container {
+  background-color: #F8EDAD; /* Mismo fondo que tu web */
+  padding: 5vh 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10vh; /* Espacio entre el inicio de cada tarjeta */
+  padding-bottom: 20vh;
+}
+
+.stack-card {
+  position: sticky;
+  top: 10vh; /* Donde se detiene la tarjeta al hacer scroll */
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  background: white;
+  border-radius: 30px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+/* Colores diferentes para cada tarjeta para que resalten al apilarse */
+.stack-card:nth-child(1) { background-color: #7280ED; color: white; }
+.stack-card:nth-child(2) { background-color: #ED7C30; color: white; }
+.stack-card:nth-child(3) { background-color: #ffffff; }
+.stack-card:nth-child(4) { background-color: #1e1e1e; color: white; }
+.stack-card:nth-child(5) { background-color: #f0f0f0; }
+.stack-card:nth-child(6) { background-color: #7280ED; color: white; }
+.stack-card:nth-child(7) { background-color: #ED7C30; color: white; }
+
+.card-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-content h2 {
+  font-family: "Boldonse", sans-serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.card-content img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Efecto visual de "achicamiento" opcional al bajar */
+.stack-card {
+  transform-origin: top center;
+}
+.liquid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; 
+  overflow: hidden;
+  /* Aumentamos el desenfoque para que parezca un gradiente suave */
+  filter: blur(100px); 
+  background-color: #F8EDAD; /* Color base */
+}
+
+.blob {
+  position: absolute;
+  width: 600px; /* Círculos más grandes para mejor mezcla */
+  height: 600px;
+  border-radius: 50%;
+  opacity: 0.6;
+  mix-blend-mode: multiply; /* Esto ayuda a que los colores se fundan entre sí */
+  transition: transform 0.5s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+/* Posiciones iniciales más dispersas */
+.color-1 { background: #7280ED; top: -10%; left: -10%; }
+.color-2 { background: #ED7C30; top: 40%; left: 50%; }
+.color-3 { background: #FFFFFF; bottom: -10%; right: -10%; }
+
+.boton {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+  background-color: #ED7C30;
+  color: #F8EDAD;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 30px;
+}
+
+.boton:hover {
+  background-color: #BD530B;
+}
+
+.boton2 {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+  background-color: white;
+  color: #7280ED;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 30px;
+}
+
+.boton2:hover {
+  background-color: #333;
+}
+
+/* Sección Know Me */
+.knowme-section {
+  min-height: 100vh;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Alinea el contenido a la derecha */
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+#typing-text {
+  font-family: "Boldonse", sans-serif;
+  font-size: 4rem;
+  color: #1e1e1e; /* Asegúrate que no sea blanco o transparente */
+  text-align: right;
+  min-height: 1.2em;
+  position: relative;
+  z-index: 20; /* Por encima de cualquier fondo */
+}
+
+.typing-container {
+  width: 100%;
+  position: relative;
+  z-index: 20;
+}
+
+/* Cursor del efecto typing */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  background-color: #ED7C30;
+  margin-left: 5px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Contenedor del ProfileCard */
+#profile-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Mantiene la tarjeta a la derecha también */
+}
+
+.overlap-card-section {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  border-radius: 30px 30px 0 0;
+  margin-top: -100px; /* Cubre parte del texto anterior */
+  z-index: 10;
+  transform: translateY(80px);
+  transition: transform 0.6s cubic-bezier(0.25,1,0.5,1);
+  min-height: 80vh;
+}
+
+.overlap-card-section:hover {
+  transform: translateY(0);
+}
+
+.split-container {
+  display: flex;
+  padding: 100px 10%; /* Aumentamos el margen lateral al 10% */
+  gap: 100px;         /* Espacio claro entre texto y tarjetas */
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1400px;  /* Evita que en pantallas gigantes se separen demasiado */
+  margin: 0 auto;     /* Centra todo el bloque en la pantalla */
+}
+
+.info-side {
+  flex: 1;            /* Toma el espacio disponible de forma equilibrada */
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  /* ELIMINADO: justify-content: center; (Esto era lo que causaba el corte) */
+}
+.sticky-text {
+  position: sticky;
+  top: 150px;
+  width: 100%;       
+  max-width: 450px;  /* Limitamos el ancho para que no choque con las cards */
+  text-align: left;
+}
+
+/* Lado derecho con el stack */
+.stack-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 160px; /* Espacio entre disparos de scroll */
+  padding-bottom: 300px;
+  margin-left: 60px;
+}
+
+.subtitulos {
+  font-family: boldonse, system-ui;
+  color: #0077cc;
+  font-weight: 400;
+  font-size: 3rem;   /* Un poco más grande para que destaque */
+  margin-bottom: 20px;
+  text-align: left;  /* Cambiado de center a left para que respete el margen */
+}
+
+.texto2 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: left;  /* Cambiado de center a left */
+  color: #333;
+}
+
+.card-item {
+  position: sticky;
+  top: 100px;
+  width: 455px;
+  height: 572px;
+  background: #f0f0f0;
+  border-radius: 30px; /* Radio de las esquinas */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* ESTO ES LO MÁS IMPORTANTE */
+  overflow: hidden; /* Corta cualquier contenido (como la imagen) que intente salir de los bordes redondeados */
+  
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-item img {
+  width: 100%;       /* Ocupa todo el ancho de la tarjeta */
+  height: 100%;      /* Ocupa todo el alto de la tarjeta */
+  object-fit: cover; /* Ajusta la imagen para llenar el espacio sin deformarse */
+  display: block;    /* Elimina espacios extra en la base de la imagen */
+}
+
+
+.texto22 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: center;  /* Cambiado de center a left */
+  color: #333;
+}
+/* Contenedor padre */
+.decoraciones-caida {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Permite hacer clic a través de ellos */
+  z-index: 5; /* Por encima del fondo, pero debajo del texto */
+}
+
+/* Estado inicial (Arriba de la pantalla) */
+.objeto-caida {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-100vh) rotate(0deg); /* Empieza muy arriba */
+  transition: transform 0.6s cubic-bezier(0.5, 0, 0.75, 0), 
+    opacity 0.3s ease;
+}
+
+/* Estado final (Donde aterrizan) */
+.objeto-caida.caer {
+  opacity: 1;
+  transform: translateY(0) rotate(15deg); /* Cae a su posición y gira un poco */
+}
+
+/* Posiciones específicas de "aterrizaje" */
+.decor-1 { top: 80vh; left: 10%; width: 50px;transition-delay: 0.01s; }
+.decor-2 { top: 90vh; right: 15%; width: 80px; transition-delay: 0.05s; }
+.decor-3 { top: 75vh; left: 50%; width: 40px; transition-delay: 0.1s; }
+
+/* ===============================
+   SECCIÓN DUAL CARDS (INCLINADAS)
+   =============================== */
+
+.dual-cards-section {
+  background-color: #F8EDAD; /* Mismo fondo de la web */
+  padding: 100px 10%;
+  text-align: center;
+  overflow: hidden; /* Evita que la inclinación cree scroll horizontal */
+}
+
+.dual-section-title {
+  font-family: "Boldonse", sans-serif;
+  font-size: 3.5rem;
+  color: #1e1e1e;
+  margin-bottom: 60px;
+}
+
+.dual-cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Para que sea responsive en móviles */
+}
+
+.info-slant-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: white;
+  padding: 50px 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Inclinación Tarjeta Izquierda */
+.card-left {
+  transform: rotate(-3deg);
+}
+
+/* Inclinación Tarjeta Derecha */
+.card-right {
+  transform: rotate(3deg);
+}
+
+/* Títulos dentro de las tarjetas */
+.card-subtitle {
+  font-family: "Boldonse", sans-serif;
+  font-size: 2.2rem;
+  color: #7280ED; /* Color azul de tu marca */
+  text-align: left;
+}
+
+/* Hover para que se enderecen un poco y resalten */
+.info-slant-card:hover {
+  transform: rotate(0deg) translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .dual-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-left, .card-right {
+    transform: rotate(0deg); /* Quitamos inclinación en móvil para mejor lectura */
+    width: 100%;
+  }
+}
+/* ===============================
+   SECCIÓN BOTÓN ANCHO COMPLETO
+   =============================== */
+
+.full-width-button-section {
+  background-color: #F8EDAD; /* Fondo igual a la web */
+  padding: 40px 10%; /* Mismo margen lateral que el resto de secciones */
+  display: flex;
+  justify-content: center;
+}
+
+.banner-button {
+  display: flex;
+  justify-content: space-between; /* Texto a la izquierda, flecha a la derecha */
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  background-color: #1e1e1e; /* Color oscuro para que resalte */
+  color: white;
+  text-decoration: none;
+  padding: 30px 50px;
+  border-radius: 20px; /* Bordes redondeados como tus cards */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.banner-text {
+  font-family: "Boldonse", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.banner-icon {
+  font-size: 2.5rem;
+  transition: transform 0.4s ease;
+}
+
+/* --- EFECTO HOVER --- */
+
+.banner-button:hover {
+  background-color: #7280ED; /* Cambia al azul de tu marca al pasar el mouse */
+  transform: scale(1.02); /* Crece un poquito */
+  box-shadow: 0 15px 30px rgba(114, 128, 237, 0.4);
+}
+
+.banner-button:hover .banner-icon {
+  transform: translateX(20px); /* La flecha se mueve a la derecha */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .full-width-button-section {
+    padding: 20px 5%;
+  }
+  
+  .banner-text {
+    font-size: 1.2rem;
+  }
+  
+  .banner-button {
+    padding: 20px 30px;
+  }
+}
+
+/* Estilo base del título */
+.dual-section-title {
+  font-family: "Boldonse", sans-serif;
+  font-size: 3.5rem;
+  color: #1e1e1e;
+  margin-bottom: 60px;
+  display: inline-block; /* Importante para el cursor */
+  border-right: 4px solid transparent; /* El cursor */
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+/* Clase que se activará con JS */
+.typing-active {
+  border-right-color: #7280ED; /* Color del cursor (tu azul) */
+  animation: blink 0.7s step-end infinite;
+}
+
+/* Animación del parpadeo del cursor */
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #7280ED; }
+}
+/* ===============================
+   FOOTER SECTION
+   =============================== */
+
+.main-footer {
+  background-color: #F8EDAD; /* Fondo amarillo de la web */
+  padding: 80px 10% 40px 10%;
+  border-top: 2px solid rgba(0,0,0,0.05); /* Línea sutil de separación */
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.footer-logo {
+  font-family: "Boldonse", sans-serif;
+  font-size: 4rem;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-link {
+  font-family: "DM Sans", sans-serif; /* O la que uses para cuerpo */
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1e1e1e;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Línea animada debajo de los links */
+.social-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #7280ED;
+  transition: width 0.3s ease;
+}
+
+.social-link:hover {
+  color: #7280ED;
+}
+
+.social-link:hover::after {
+  width: 100%;
+}
+
+.footer-email {
+  margin-top: 20px;
+}
+
+.email-link {
+  font-family: "Boldonse", sans-serif;
+  font-size: 1.5rem;
+  color: #1e1e1e;
+  text-decoration: none;
+  background: white;
+  padding: 15px 30px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.email-link:hover {
+  background-color: #1e1e1e;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.footer-bottom {
+  margin-top: 60px;
+  opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-logo {
+    font-size: 2.5rem;
+  }
+  .footer-socials {
+    gap: 20px;
+  }
+}
+/* ===============================
+   SECCIÓN PROGRAMAS (TOOLBOX)
+   =============================== */
+
+.software-section {
+  background-color: #F8EDAD; /* Fondo amarillo */
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.software-title {
+  font-family: "Boldonse", sans-serif;
+  font-size: 2.5rem;
+  color: #1e1e1e;
+  margin-bottom: 40px;
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Se adapta solo */
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+.software-item {
+  width: 90px;
+  height: 90px;
+  background: white;
+  border-radius: 20px; /* Bordes suaves */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.software-item img {
+  width: 60%; /* Ajusta el tamaño del icono dentro del cuadro */
+  height: auto;
+  filter: grayscale(20%); /* Un toque sutil de estilo */
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.software-item:hover {
+  transform: translateY(-10px) rotate(5deg); /* Pequeño salto e inclinación */
+  box-shadow: 0 15px 30px rgba(114, 128, 237, 0.2); /* Sombra azul marca */
+}
+
+.software-item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .software-grid {
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas en tablet */
+    gap: 15px;
+  }
+  .software-item {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .software-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en móvil */
+  }
+}
+
+/* ===============================
+   ESTILO DE CARPETAS (ARCHIVE)
+   =============================== */
+
+/* ===============================
+   ESTILO DE CARPETAS (OPTIMIZADO)
+   =============================== */
+
+.folder-page {
+  background-color: #F8EDAD; /* Fondo amarillo consistente */
+}
+
+.archive-section {
+  padding: 80px 10% 60px 10%; /* 10% de área de respeto lateral */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza la cuadrícula y el header */
+}
+
+.archive-header {
+  margin-bottom: 50px; /* Reduce espacio para que las carpetas suban */
+  text-align: center;  /* Centraliza el texto */
+  width: 100%;
+}
+
+.centered-title {
+  font-family: "Boldonse", sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase; /* Todo en Mayúsculas */
+  letter-spacing: 5px;
+  color: #1e1e1e;
+  margin-bottom: 10px;
+}
+
+.folder-description {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto; /* Centra el párrafo */
+  line-height: 1.6;
+}
+
+.folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+  width: 100%;
+  max-width: 1200px; /* Evita que se dispersen demasiado en pantallas ultra-wide */
+  perspective: 1000px;
+}
+
+/* Estructura de la Carpeta */
+.folder-item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.folder-tab {
+  width: 90px;
+  height: 25px;
+  border-radius: 12px 12px 0 0;
+  margin-left: 20px;
+  position: relative;
+  bottom: -2px;
+}
+
+.folder-body {
+  height: 200px; /* Un poco más compactas para que quepan mejor */
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.folder-name {
+  font-family: "Boldonse", sans-serif;
+  font-size: 2rem;
+  line-height: 0.9;
+  color: white;
+}
+
+.folder-count {
+  font-family: "Inconsolata", monospace;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: right;
+}
+
+/* Colores */
+.color-blue .folder-tab, .color-blue .folder-body { background-color: #7280ED; }
+.color-orange .folder-tab, .color-orange .folder-body { background-color: #ED7C30; }
+.color-dark .folder-tab, .color-dark .folder-body { background-color: #1e1e1e; }
+.color-pink .folder-tab, .color-pink .folder-body { background-color: #FFB6C1; }
+.color-green .folder-tab, .color-green .folder-body { background-color: #58D68D; }
+.color-purple .folder-tab, .color-purple .folder-body { background-color: #4A55A2; }
+
+/* Efecto Hover */
+.folder-item:hover {
+  transform: translateY(-12px) rotateX(8deg);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .centered-title { font-size: 2.5rem; }
+  .archive-section { padding: 60px 5%; }
+}
+
+/* =========================================
+   NUEVAS ETIQUETAS: VENTANA DE CONTACTO
+   ========================================= */
+
+.contact-main-container {
+  padding: 80px 10% 80px 10%; /* Área de respeto lateral 10% */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F8EDAD;
+  min-height: 100vh;
+}
+
+.contact-sub-info {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: -20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* El contenedor blanco del formulario */
+.contact-form-wrapper {
+  background: white;
+  width: 100%;
+  max-width: 650px;
+  padding: 45px;
+  border-radius: 40px; /* Bordes muy redondeados como tus cards */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.custom-booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-block-new {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label-custom {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1e1e1e;
+  padding-left: 5px;
+}
+
+/* Estilo para Inputs, Selects y Textarea */
+.input-field-custom, 
+.select-field-custom, 
+.textarea-field-custom {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 18px;
+  border: 2px solid #f4f4f4;
+  background-color: #fdfdfd;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-field-custom:focus, 
+.select-field-custom:focus, 
+.textarea-field-custom:focus {
+  outline: none;
+  border-color: #7280ED; /* Tu azul de marca */
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(114, 128, 237, 0.1);
+}
+
+/* Botón de envío especial */
+.submit-button-fancy {
+  background-color: #1e1e1e;
+  color: white;
+  font-family: "Boldonse", sans-serif;
+  font-size: 1.3rem;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button-fancy:hover {
+  background-color: #7280ED;
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(114, 128, 237, 0.3);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .contact-form-wrapper {
+    padding: 30px 20px;
+  }
+  .contact-main-container {
+    padding: 60px 5%;
+  }
+}
+/* =========================================
+   D/* =========================================
+   DETALLE DE TRABAJO CORREGIDO (SOCIAL MEDIA)
+   ========================================= */
+
+/* =========================================
+   DETALLE DE TRABAJO CORREGIDO (SOCIAL MEDIA)
+   ========================================= */
+
+.work-detail-container {
+  /* Aumento de padding superior para evitar que el navbar tape el título */
+  padding: 160px 10% 80px 10%; 
+  background-color: #F8EDAD;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.category-tag {
+  font-family: "Inconsolata", monospace;
+  color: #7280ED;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* Estilos de cuenta y galería */
+.account-section {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.account-info {
+  text-align: left;
+  margin-bottom: 30px;
+  border-left: 5px solid #7280ED;
+  padding-left: 20px;
+}
+
+.account-title {
+  font-family: "Boldonse", sans-serif;
+  font-size: 2.2rem;
+  color: #1e1e1e;
+  margin-bottom: 10px;
+}
+
+.section-divider {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0));
+  margin: 60px 0;
+}
+
+.work-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.gallery-item.large { grid-column: span 2; grid-row: span 2; }
+.gallery-item.tall { grid-row: span 2; }
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* --- BOTÓN "VOLVER" ESTILO STICKER CORREGIDO --- */
+.back-navigation {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.back-btn {
+  font-family: "Boldonse", sans-serif;
+  text-decoration: none;
+  background-color: #ED7C30; /* Naranja de tu marca */
+  color: #F8EDAD;            /* Color crema de fondo */
+  font-size: 1.3rem;
+  padding: 18px 45px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(237, 124, 48, 0.3);
+  border: none;
+}
+
+.back-btn:hover {
+  background-color: #1e1e1e; /* Cambio a negro */
+  color: white;
+  transform: scale(1.1) rotate(-3deg); /* Efecto sticker */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Query para móviles */
+@media (max-width: 768px) {
+  .work-detail-container { padding-top: 120px; }
+  .gallery-item.large { grid-column: span 1; grid-row: span 1; }
+  .account-title { font-size: 1.8rem; }
+  .back-btn { font-size: 1.1rem; padding: 15px 30px; }
+}
+
+/* =========================================
+   CUADRÍCULA SECUNDARIA (POSTS & REELS)
+   ========================================= */
+
+.secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  grid-gap: 20px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+/* El REEL ocupa dos filas de alto */
+.grid-item.tall {
+  grid-row: span 2;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay al pasar el mouse */
+.grid-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(114, 128, 237, 0.85); /* Azul de la sección */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid-overlay span {
+  color: white;
+  font-family: "Boldonse", sans-serif;
+  font-size: 1rem;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover .grid-overlay { opacity: 1; }
+.grid-item:hover .grid-overlay span { transform: translateY(0); }
+.grid-item:hover { transform: translateY(-5px); }
+
+/* Ajuste móvil para que no se vea minúsculo */
+@media (max-width: 768px) {
+  .secondary-grid {
+    grid-template-columns: 1fr 1fr; /* 2 columnas en móvil */
+  }
+  .grid-item.tall {
+    grid-row: span 1; /* En móvil todos iguales para mejor flujo */
+    height: 300px;
+  }
+}
+/* --- CONTENEDOR PRINCIPAL DEL SLIDER --- */
+.main-slider-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  aspect-ratio: 16 / 9; /* Ajusta esto a 1/1 si tus artes son mayormente cuadrados */
+  background-color: #fff;
+}
+
+/* EL TRACK: El ancho debe ser 100% * número de imágenes */
+.slider-track {
+  display: flex;
+  width: 300%; /* 3 imágenes = 300% */
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* CADA SLIDE: Debe ser exactamente 1/3 del track */
+.slide {
+  width: 33.3333%; 
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cambia a 'contain' si no quieres que se corte nada de la imagen */
+  display: block;
+}
+
+/* PUNTOS (DOTS) */
+.slider-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.dot.active {
+  background: #7280ED; /* Color azul de tu marca */
+  transform: scale(1.2);
+  border-color: white;
+}
+
+/* --- CONTENEDORES DE VIDEO --- */
+.video-item {
+  background-color: #000; /* Fondo negro para que el video destaque */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que llene el contenedor sin bandas negras */
+}
+
+.video-label {
+  background: #1e1e1e;
+  color: #fff;
+  font-family: 'Inconsolata', monospace;
+  font-size: 0.75rem;
+  padding: 8px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* --- MEDIDAS EXACTAS --- */
+.format-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.format-9-16 {
+  aspect-ratio: 9 / 16;
+  max-width: 320px; /* Para que los reels no se vean gigantes en desktop */
+  justify-self: center;
+}
+
+.format-1-1 {
+  aspect-ratio: 1 / 1;
+  max-width: 400px;
+  justify-self: center;
+}
+
+/* --- GRIDS DE DISTRIBUCIÓN --- */
+
+/* Adocine: 2 arriba (16:9), 3 abajo (Reels y Post) */
+.motion-grid-adocine {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 25px;
+}
+
+.motion-grid-adocine .format-16-9 { grid-column: span 3; } /* 2 por fila */
+.motion-grid-adocine .format-9-16 { grid-column: span 2; } /* 3 por fila (junto al post) */
+.motion-grid-adocine .format-1-1 { grid-column: span 2; }
+
+/* Cucu: 2 Reels centrados */
+.motion-grid-cucu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Inedito: Centrado y destacado */
+.full-width {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .motion-grid-adocine { grid-template-columns: 1fr; }
+  .motion-grid-adocine .format-16-9, 
+  .motion-grid-adocine .format-9-16, 
+  .motion-grid-adocine .format-1-1 { 
+    grid-column: span 1; 
+  }
+  .motion-grid-cucu { flex-direction: column; align-items: center; }
+}
+
+/* --- DIARIO LIBRE GRID --- */
+.motion-grid-diario {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* El horizontal ocupa el doble que el vertical */
+  gap: 30px;
+  align-items: end; /* Alinea los textos de abajo */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Ajuste para que el 16:9 de Diario Libre no sea infinito */
+.motion-grid-diario .format-16-9 {
+  width: 100%;
+}
+
+/* Ajuste para que el Reel en esta sección se vea bien escalado */
+.motion-grid-diario .format-9-16 {
+  width: 100%;
+  max-width: 350px;
+  justify-self: end;
+}
+
+/* RESPONSIVE DIARIO LIBRE */
+@media (max-width: 900px) {
+  .motion-grid-diario {
+    grid-template-columns: 1fr; /* Uno sobre otro en móviles */
+    justify-items: center;
+  }
+  
+  .motion-grid-diario .format-9-16 {
+    justify-self: center;
+  }
+}
+/* --- SECCIÓN PERSONALES --- */
+
+/* Contenedor del video 1080p destacado */
+.personal-highlight {
+  margin-bottom: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid de 6 Reels: 3 columnas, 2 filas */
+.personal-reels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 25px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Aseguramos que los 9:16 personales mantengan su forma sin crecer de más */
+.personal-reels-grid .format-9-16 {
+  width: 100%;
+  max-width: 320px; /* Tamaño ideal para desktop */
+  justify-self: center;
+}
+
+/* RESPONSIVE PERSONALES */
+@media (max-width: 1024px) {
+  .personal-reels-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .personal-reels-grid {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+  }
+  
+  .personal-highlight {
+    width: 100%;
+  }
+}
+/* --- GRIDS ESPECÍFICOS DE EDICIÓN --- */
+
+/* Diario Libre: 2 columnas para que los reportajes se vean grandes */
+.video-grid-editorial {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* El 5to video de Diario Libre ocupa las dos columnas para cerrar la sección */
+.dl-highlight {
+  grid-column: span 2;
+  width: 80% !important; /* Un poco más pequeño para que no sea gigante */
+  margin: 0 auto;
+}
+
+/* Generación Ejemplo: 3 columnas para los 6 Reels */
+.reels-grid-example {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Formatos de Video (Reutilizando los de Motion Graphics) */
+.format-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.format-9-16 {
+  aspect-ratio: 9 / 16;
+}
+
+.video-item {
+  background: #000;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.video-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .video-grid-editorial, .reels-grid-example {
+    grid-template-columns: 1fr;
+  }
+  .dl-highlight {
+    grid-column: span 1;
+    width: 100% !important;
+  }
+}
+/* --- ESTILOS EDICIÓN PERSONAL CON TEXTO --- */
+
+/* Ajuste para la sección del medio (los 2 horizontales) */
+.personal-editing-wide {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Cuadrícula 2x2 para la sección final */
+.vertical-grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 900px; /* Ancho controlado para que respete márgenes */
+  margin: 0 auto;
+}
+
+.vertical-grid-2x2 .edit-card-vertical video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* Separadores sutiles */
+.section-divider {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
+  margin: 80px 0;
+}
+
+/* =========================================
+   ESTILO MOODBOARD 2x2 (GRANDE Y AJUSTADO)
+   ========================================= */
+
+.gallery-section {
+  padding: 60px 0;
+  width: 90%; 
+  max-width: 1200px; /* Aquí controlas que NO ocupen toda la pantalla */
+  margin: 0 auto;
+}
+
+.moodboard-2x2 {
+  display: grid;
+  /* Creamos solo 2 columnas anchas */
+  grid-template-columns: 1fr 1fr; 
+  gap: 30px; /* Espacio entre imágenes */
+  align-items: start;
+}
+
+.mood-item {
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+/* FORMATO RECTANGULAR (Vertical 4:5) */
+.mood-item.portrait {
+  aspect-ratio: 1080 / 1350; 
+}
+
+/* FORMATO CUADRADO (1:1) */
+.mood-item.square {
+  aspect-ratio: 1 / 1;
+}
+
+.mood-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen llene el espacio sin estirarse */
+  display: block;
+}
+
+/* Efecto hover */
+.mood-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   RESPONSIVE (Ajuste para móviles)
+   ========================================= */
+
+@media (max-width: 800px) {
+  .moodboard-2x2 {
+    grid-template-columns: 1fr; /* Una sola columna en móvil para que se vean imponentes */
+    gap: 20px;
+  }
+  
+  .gallery-section {
+    width: 95%;
+  }
+}
+
+/* Navegación inferior */
+.back-navigation {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.back-btn {
+  font-family: 'Inconsolata', monospace;
+  text-decoration: none;
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+  padding: 15px 35px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+/* =========================================
+   ESTILOS COMPLEMENTARIOS: SECCIÓN CREARE
+   ========================================= */
+
+.section-divider-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 80px 0 50px 0;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.creare-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Espacio entre las filas de CREARE */
+}
+
+.creare-row {
+  display: grid;
+  /* Usamos 2 columnas iguales como en la primera sección */
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px;
+  align-items: center;
+}
+
+/* El texto de CREARE */
+.creare-text {
+  padding: 0 20px;
+}
+
+.creare-num {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.2rem;
+  color: #888;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.creare-text h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.creare-text p {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* --- RESPONSIVE PARA CREARE --- */
+
+@media (max-width: 850px) {
+  .creare-row {
+    grid-template-columns: 1fr; /* En móvil se apilan */
+    gap: 20px;
+    text-align: center;
+  }
+  
+  /* En móvil, el orden siempre será Imagen arriba, Texto abajo */
+  .creare-row.reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .creare-text {
+    padding: 20px 0;
+  }
+}
+
+.step-number {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.2rem;
+  color: #999;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.creare-text h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.creare-text p {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* =========================================
+   RESPONSIVE CREARE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .creare-row, .creare-row.reverse {
+    flex-direction: column; /* Se apilan en móvil */
+    text-align: center;
+    gap: 30px;
+  }
+
+  .creare-image, .creare-text {
+    max-width: 100%;
+  }
+
+  .creare-title {
+    font-size: 2rem;
+  }
+}
+/* =========================================
+   SECCIÓN BRANDING / LOGOFOLIO
+   ========================================= */
+
+.branding-project {
+  width: 90%;
+  max-width: 1200px; /* Margen estricto */
+  margin: 0 auto 100px auto;
+}
+
+/* Logo Principal */
+.main-logo-display {
+  width: 100%;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.main-logo-display img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain; /* Para que el logo no se corte */
+  margin-bottom: 30px;
+}
+
+.brand-intro {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.brand-intro h2 {
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 3px;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.brand-intro p {
+  font-family: 'Inconsolata', monospace;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Grid de Aplicaciones del Branding */
+.branding-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas como la sección anterior */
+  gap: 30px;
+}
+
+.brand-item {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Las aplicaciones llenan el espacio */
+  display: block;
+}
+
+/* Clase para imágenes que queremos que resalten más */
+.brand-item.large {
+  grid-row: span 1;
+}
+
+/* Responsivo */
+@media (max-width: 800px) {
+  .branding-grid {
+    grid-template-columns: 1fr; /* Una columna en móvil */
+  }
+  
+  .main-logo-display img {
+    max-height: 300px;
+  }
+}
+/* =========================================
+   EFECTO DE SOMBRA (SHADOW) PARA IMÁGENES
+   ========================================= */
+
+.branding-detail-section {
+  padding: 80px 0;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Clase específica para el sombreado */
+.shadow-focus {
+  /* Sombra profunda y suave: desplazamiento x, desplazamiento y, difuminado, expansión, color */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15) !important; 
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Elevación extra al pasar el mouse */
+.shadow-focus:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Aseguramos que el contenedor de CREARE-ROW respete el mismo tamaño de antes */
+.creare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.creare-row.reverse {
+  direction: ltr; /* Mantenemos dirección estándar */
+}
+
+/* Ajuste para que en modo reversa los elementos se posicionen bien */
+.creare-row.reverse .creare-text {
+  order: 1;
+}
+.creare-row.reverse .mood-item {
+  order: 2;
+}
+
+/* Responsive para móvil */
+@media (max-width: 850px) {
+  .creare-row, .creare-row.reverse {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .creare-row.reverse .creare-text {
+    order: 2;
+  }
+  .creare-row.reverse .mood-item {
+    order: 1;
+  }
+}
+/* =========================================
+   REBRANDING SLIDER
+   ========================================= */
+
+.rebranding-section {
+  padding: 60px 0;
+  overflow: hidden; /* Evita desbordes horizontales */
+}
+
+.swiper {
+  width: 100%;
+  max-width: 1200px; /* Respeto estricto de márgenes */
+  padding-bottom: 50px;
+}
+
+.slider-image-container {
+  width: 100%;
+  /* Proporción Horizontal (ej. 16:9 o 2:1) */
+  aspect-ratio: 16 / 7; 
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.slider-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Personalización de flechas Swiper */
+.swiper-button-next, .swiper-button-prev {
+  color: #1a1a1a;
+  transform: scale(0.7);
+}
+
+.slider-description-container {
+  margin-top: 30px;
+  min-height: 150px; /* Evita saltos de altura al cambiar texto */
+  transition: opacity 0.3s ease;
+}
+
+/* =========================================
+   ANIMACIÓN FADE IN (SCROLL REVEAL)
+   ========================================= */
+
+/* Estado inicial: El elemento está invisible y 30px más abajo */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s cubic-bezier(0.2, 1, 0.3, 1); /* Transición suave tipo Apple */
+  visibility: hidden;
+}
+
+/* Estado activo: Se vuelve visible y sube a su posición original */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+/* --- SECCIONES SOCIAL MEDIA (NUEVO) --- */
+
+.social-grid-wrapper {
+  padding: 60px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.account-info {
+  margin-bottom: 40px;
+}
+
+.account-title {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.folder-description {
+  font-family: 'DM Sans', sans-serif;
+  color: #666;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* El Grid de Formas Cuadradas y Rectangulares */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas base */
+  gap: 15px;
+}
+
+.grid-item {
+  background-color: #eee;
+  overflow: hidden;
+  border-radius: 0px; /* Bordes totalmente rectos como pediste */
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Proporciones exactas */
+.grid-item.square {
+  aspect-ratio: 1 / 1;
+}
+
+.grid-item.vertical {
+  aspect-ratio: 9 / 16;
+  grid-row: span 2; /* Ocupa el espacio de dos filas hacia abajo */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-item.vertical {
+    grid-row: auto;
+    aspect-ratio: 4 / 5; /* Un poco menos alto en móviles */
+  }
+}
+/* Estilos para el Overlay de Coming Soon */
+.coming-soon-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.85); /* Fondo claro semitransparente */
+  backdrop-filter: blur(10px); /* Desenfoque del fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Por encima de todo, incluso del navbar */
+}
+
+.coming-soon-content {
+  text-align: center;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  max-width: 450px;
+  border: 2px solid #F8EDAD; /* Color a juego con tu Hero */
+}
+
+.icon-box {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+.coming-soon-content h2 {
+  font-family: 'League Gothic', sans-serif; /* Usando tus fuentes */
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.coming-soon-content p {
+  font-family: 'Figtree', sans-serif;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.btn-back:hover {
+  transform: scale(1.05);
+  background-color: #000;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Contenedor específico para Instagram en secciones de edición */
+.instagram-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f4f4f4; /* Un gris suave para el fondo del embed */
+    border-radius: 8px;
+    overflow-y: auto; /* Permite scroll si el caption de Instagram es muy largo */
+    max-height: 600px; /* Evita que el Reel estire demasiado la sección */
+}
+
+.instagram-container .instagram-media {
+    min-width: 100% !important;
+    margin: 0 !important;
+}
+//* ==========================================================================
+   DISEÑO EDITORIAL - ESTILOS ESPECÍFICOS
+   ========================================================================== */
+
+/* 1. Contenedor Principal */
+.editorial-showcase {
+    padding: 60px 0;
+    margin-bottom: 80px;
+}
+
+.editorial-text {
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+/* 2. Swiper Editorial (Efecto Revista/Libro) */
+.mySwiperEditorial {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.mySwiperEditorial .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 320px; /* Ancho de una página editorial estándar */
+    height: 450px;
+    filter: blur(1px);
+    transition: all 0.5s ease;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* El slide que está en el centro se ve nítido */
+.mySwiperEditorial .swiper-slide-active {
+    filter: blur(0);
+    transform: scale(1.1);
+}
+
+.mySwiperEditorial .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Botones de navegación de Swiper */
+.swiper-button-next, .swiper-button-prev {
+    color: #1a1a1a;
+}
+
+/* 3. Cuadrícula de Catálogos (Imágenes Horizontales) */
+.editorial-grid {
+    display: flex;
+    flex-direction: column; /* Apilado vertical para resaltar lo horizontal */
+    gap: 50px;
+    margin-top: 40px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editorial-item.landscape {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.editorial-item.landscape img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción horizontal perfecta */
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Efecto hover elegante */
+.editorial-item.landscape:hover img {
+    transform: scale(1.03);
+}
+
+/* 4. Animaciones Reveal (Para que el contenido no aparezca vacío) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 5. Responsive */
+@media (max-width: 768px) {
+    .mySwiperEditorial .swiper-slide {
+        width: 260px;
+        height: 380px;
+    }
+
+    .editorial-grid {
+        gap: 30px;
+        padding: 0 15px;
+    }
+}
+/* ==========================================
+   SOLO PARA CELULARES (No afecta computadora)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste del Menú (Navbar) */
+    .nav-links {
+        padding: 10px 5px;
+        gap: 8px; /* Menos espacio entre botones */
+        flex-wrap: wrap; /* Si son muchos, que bajen a la siguiente línea */
+    }
+    
+    .nav-links a {
+        font-size: 0.75rem; /* Letra un poco más pequeña en celular */
+    }
+
+    /* 2. Títulos Grandes */
+    .dual-section-title, .centered-title {
+        font-size: 2.5rem !important; /* Que no se salgan de la pantalla */
+        line-height: 1.1;
+        padding: 0 15px;
+    }
+
+    /* 3. Las Tarjetas del Index (Stack Cards) */
+    .stack-card {
+        width: 92% !important; /* Ocupan casi todo el ancho del cel */
+        margin: 15px auto !important;
+        padding: 25px 15px !important;
+        height: auto !important; /* Que crezcan según el contenido */
+    }
+
+    .card-content h2 {
+        font-size: 2.2rem !important;
+    }
+
+    /* 4. Grillas de Proyectos (Editorial, Social Media, etc.) */
+    /* Esto hace que las columnas se pongan una debajo de otra */
+    .editorial-grid, 
+    .creare-row, 
+    .columns, 
+    .account-section {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    .account-info {
+        width: 100% !important;
+        padding: 0 20px;
+    }
+
+    /* 5. Imágenes y Videos */
+    /* Forzamos a que nada sea más ancho que el celular */
+    img, video, .editorial-item, .grid-item, .edit-card-vertical {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 6. El Slider de Logos (Logofolio) */
+    .mySwiper {
+        width: 100% !important;
+    }
+    
+    #slide-text {
+        width: 90% !important;
+        padding: 20px !important;
+    }
+
+    /* 7. Footer (HABLEMOS) */
+    .footer-logo {
+        font-size: 3.5rem !important;
+    }
+    
+    .footer-socials {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+}
